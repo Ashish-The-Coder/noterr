@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- javascript -->
+    <script src="js/script.js" defer></script>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -16,6 +18,10 @@
     <title>Noterr | Quickly add your notes in browser</title>
   </head>
   <body>
+    <div class="header">
+      <h2>Your Notes</h2>
+      <button id="addNoteLink">Add Note</button>
+    </div>
     <div class="body">
       <section class="left-pane">
         <div class="header">
@@ -131,24 +137,55 @@
               modi placeat optio obcaecati nam laudantium ratione.
             </p>
           </div>
+          <div class="note-card">
+            <div class="note-header">
+              <h4>Title</h4>
+              <button>Delete</button>
+            </div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
+              nulla maiores! Quae officia suscipit dicta consequatur natus
+              molestiae nobis ipsum veniam iure at? Atque omnis in esse illo
+              modi placeat optio obcaecati nam laudantium ratione.
+            </p>
+          </div>
+          <div class="note-card">
+            <div class="note-header">
+              <h4>Title</h4>
+              <button>Delete</button>
+            </div>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
+              nulla maiores! Quae officia suscipit dicta consequatur natus
+              molestiae nobis ipsum veniam iure at? Atque omnis in esse illo
+              modi placeat optio obcaecati nam laudantium ratione.
+            </p>
+          </div>
         </div>
       </section>
       <section class="right-pane">
-        <div id="add-note" class="add-note">
-          <input type="text" placeholder="Title" />
-          <textarea
-            cols="130"
-            rows="10"
-            placeholder="Write your note here..."
-          ></textarea>
-          <button>Add Note</button>
-        </div>
-        <div class="d-note">
+        <div id="add-note" class="hidden">
+          <span>
+            <input id="noteTitle" type="text" placeholder="Title" />
+            <p class="alert hidden">Please enter title</p></span
+          >
+          <span class="desSpan">
+            <textarea
+              id="noteDes"
+              cols=30"
+              rows="10"
+              placeholder="Write your note here..."
+            ></textarea>
+            <p class="alert hidden">Please enter your note</p></span
+          >
+          <button id="addToNoterr">Add to Noterr</button>
+          </div>
+        <div id="d-note" class="hidden">
           <h2>Title</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
             blanditiis, omnis asperiores pariatur consequatur doloremque ab
-            beatae eius laudantium inventore culpa.
+            beatae eius laudantium inventore culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aspernatur ad accusantium. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non corrupti placeat saepe quia ullam repudiandae odit vero magnam repellat dicta doloribus accusamus deleniti ipsa cupiditate commodi, minus rerum et tempore eligendi distinctio esse facere. Odit amet aliquid quidem sapiente distinctio quam ut recusandae voluptas sequi commodi mollitia ad, maiores numquam quaerat quisquam debitis aut illum repellendus neque quis totam itaque ullam! Cum natus dolores dicta, ducimus mollitia culpa at facilis perspiciatis odio officiis nesciunt sit quisquam, possimus voluptates eaque expedita earum voluptatibus placeat minus necessitatibus reprehenderit molestias omnis eveniet cupiditate. Veniam velit, fugit corrupti, tempora possimus quas nulla aut fugiat perspiciatis numquam consequatur maiores odit iusto quos. Voluptatibus, sint nemo. Odio aliquid itaque impedit corrupti, non sit ut harum repellendus ducimus amet ipsa porro ab! Iure voluptas culpa quo accusamus quisquam rem ducimus, deserunt praesentium! Maiores excepturi illo magni libero ex neque tempora, in officia consequuntur iste ullam voluptatum saepe, enim voluptates alias veritatis rerum mollitia consequatur odit vero reiciendis assumenda omnis nemo. Non consequuntur laborum, quasi vel veniam similique neque! Cumque cum earum voluptate, quo ex voluptatibus fugit recusandae quaerat repellat perspiciatis odit culpa officiis quod quae? Recusandae odit doloribus porro, sed natus beatae magnam quos alias explicabo debitis voluptatem! Nobis dolorem ipsum saepe ducimus, optio dolorum perferendis est laboriosam explicabo illo labore ad placeat iusto alias doloremque deserunt assumenda expedita, delectus nostrum nesciunt ipsam possimus obcaecati fugiat sequi? Eos quos eaque porro amet rem nobis fugiat perferendis maiores laborum tenetur molestias dignissimos voluptatem voluptas ex laboriosam quis quam, necessitatibus omnis sequi sunt animi! Odit perspiciatis distinctio sequi amet tenetur, reprehenderit fuga veritatis in ab illo accusantium iusto incidunt maxime quasi eaque laborum enim optio esse, obcaecati eligendi possimus eveniet. Aliquam saepe neque illo, esse magnam sint ad assumenda deleniti praesentium vitae aliquid cupiditate nihil! Ab ducimus repudiandae nesciunt rerum impedit expedita alias quisquam officia illum consectetur, nobis inventore temporibus possimus fugiat nam magni quam earum quasi. Iste asperiores corrupti quia nesciunt dolores incidunt eveniet ipsa reiciendis tenetur mollitia repellat, delectus laboriosam ratione cumque atque hic ducimus officiis perspiciatis sint et. Dicta dolorum mollitia dolores unde laudantium cumque, harum atque praesentium deserunt nostrum tempora ipsa animi fugit neque sint reiciendis. Reprehenderit blanditiis dolorum magnam laborum, ducimus dicta incidunt molestiae aliquid alias harum veritatis at amet assumenda, voluptas nesciunt repellendus optio ipsum dolorem iusto quas quo expedita! Dicta deserunt quaerat quidem minima odit eveniet adipisci ullam laboriosam nobis. Vitae labore sed sequi, minima provident aliquid reiciendis quia? Sint culpa nulla dolore officiis et, quidem porro esse temporibus libero inventore quibusdam ducimus veritatis doloremque excepturi iste similique facilis rerum deleniti aperiam aliquid dolor? Sed ea pariatur voluptatibus quia nostrum doloremque nisi, beatae distinctio debitis temporibus molestiae dolorum fugit minima nesciunt, corrupti in recusandae impedit numquam adipisci maiores iste aperiam? Porro hic nostrum itaque atque rerum aperiam totam laboriosam blanditiis, voluptate dolore corrupti nisi veniam ipsum quam explicabo accusantium veritatis quis laudantium sint odio molestiae quia delectus excepturi. Mollitia rerum consequatur praesentium fuga sint officiis ex sed molestias cum, doloribus saepe inventore quas odit, aliquam alias aliquid error recusandae eligendi corrupti placeat amet nostrum expedita. Nisi consequatur molestiae aut illum, fugiat et!
           </p>
         </div>
       </section>
