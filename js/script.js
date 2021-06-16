@@ -1,3 +1,20 @@
+// Display the privacy message to first time users
+const firstTimeBox = document.getElementById("first-time");
+if (localStorage.getItem("isVisited")) {
+  firstTimeBox.classList.add("hidden");
+} else {
+  localStorage.setItem("isVisited", true);
+  document.getElementById("body").classList.add("blurred");
+  document.getElementById("mobileHeader").classList.add("blurred");
+}
+
+const clickedVisited = document.getElementById("visitedBtn");
+clickedVisited.addEventListener("click", () => {
+  firstTimeBox.classList.add("hidden");
+  document.getElementById("body").classList.remove("blurred");
+  document.getElementById("mobileHeader").classList.remove("blurred");
+});
+
 // Show the add note box on mobile by clicking on the "Add Note" link
 const addNoteLink = document.getElementById("addNoteLink");
 const addNote = document.getElementById("add-note");

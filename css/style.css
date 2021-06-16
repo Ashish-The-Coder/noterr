@@ -22,13 +22,57 @@
   background-color: var(--gray);
 }
 
-.body {
+#body {
   font-family: "Roboto", sans-serif;
   background-color: var(--bg);
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column-reverse;
+}
+.blurred {
+  filter: blur(5px);
+}
+#first-time {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh !important;
+  height: max-content;
+  margin: auto;
+  z-index: 9999;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  background-color: #dddddd88;
+}
+#first-time h3 {
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+#first-time button {
+  font-family: "Roboto", sans-serif;
+  background: none;
+  outline: none;
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 1rem;
+  font-size: 2rem;
+  width: 50vw;
+}
+#first-time button:hover,
+#first-time button:focus {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+#first-time p {
+  width: 25vw;
+  min-width: 15ch;
+  font-size: 2rem;
+  margin: 3rem auto;
 }
 .header {
   font-family: "Raleway", sans-serif;
@@ -197,8 +241,11 @@
   body {
     overflow: hidden;
   }
-  .body {
+  #body {
     flex-direction: row;
+  }
+  #first-time button {
+    width: 25rem;
   }
   .header .add-note-link {
     display: none;
