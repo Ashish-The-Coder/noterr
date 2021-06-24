@@ -253,7 +253,7 @@ body {
   }
   #body {
     height: 100vh;
-    flex-direction: row;
+    flex-direction: row !important;
   }
   #first-time button {
     width: 25rem;
