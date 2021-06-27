@@ -124,8 +124,6 @@ body {
   font-size: 1.5rem;
 }
 .note-card {
-  display: flex;
-  flex-direction: column;
   border: 2px solid var(--accent);
   border-radius: 6px;
   padding: 1.5rem;
@@ -296,11 +294,11 @@ body {
     max-width: 90%;
   }
   .note-card {
-    height: auto;
     border: none;
     border-radius: 0;
     padding: 1.75rem 2rem;
     margin: 0;
+    height: auto !important;
   }
   .note-card p {
     display: inline-block;
