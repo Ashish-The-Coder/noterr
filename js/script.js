@@ -126,4 +126,6 @@ function displayNote(e) {
   let cardpara = e.target.querySelector("p");
   displayTitle.innerText = cardHeading.innerText;
   displayDes.innerText = cardpara.innerText;
+  cardDetails.classList.remove("hidden");
+  document.getElementById("add-note").classList.add("hidden");
 }

@@ -18,7 +18,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 7px;
+  border-radius: 10px;
   background-color: var(--gray);
 }
 ::selection {
@@ -26,18 +26,17 @@
 }
 body {
   font-family: "Raleway", sans-serif;
+  background-color: var(--bg);
+}
+.blurred {
+  filter: blur(5px);
 }
 #body {
-  background-color: var(--bg);
   height: 80vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: end;
-  overflow-y: hidden;
-}
-.blurred {
-  filter: blur(5px);
+  justify-content: flex-end;
 }
 #first-time {
   position: fixed;
@@ -79,11 +78,12 @@ body {
   font-size: 2rem;
   margin: 3rem auto;
 }
-.header {
+#mobileHeader.header {
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0 2rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -113,11 +113,12 @@ body {
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 19rem);
   padding: 1rem;
-  overflow-y: auto;
+  overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--gray);
 }
 #notes .noItem {
+  display: inline-block;
   width: 90vw;
   padding: 0 2rem;
   font-size: 1.5rem;
@@ -131,6 +132,7 @@ body {
   cursor: pointer;
   margin: 0;
   user-select: none;
+  height: 12rem;
 }
 .note-card:hover {
   background-color: var(--primary);
@@ -140,13 +142,21 @@ body {
 }
 .note-card h4 {
   font-size: 2rem;
+  overflow: hidden;
+  max-width: 8ch;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .note-card p {
   font-weight: 400;
   max-width: 90%;
   font-size: 1.2rem;
   margin-top: 1rem;
+  overflow: hidden;
   pointer-events: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .note-card button {
   font-weight: 700;
@@ -191,6 +201,7 @@ body {
 #add-note textarea {
   font-size: 1.5rem;
   resize: none;
+  transition: 1s;
 }
 #add-note input,
 #add-note textarea {
@@ -232,7 +243,7 @@ body {
   background-color: var(--accent);
   padding: 2rem;
   height: 50vh;
-  overflow-y: auto;
+  overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--gray);
 }
@@ -258,14 +269,12 @@ body {
   #first-time button {
     width: 25rem;
   }
-  .header .add-note-link {
-    display: none;
-  }
-  .header {
+  #mobileHeader.header {
     display: none;
   }
   .left-pane .header {
-    display: flex;
+    display: block;
+    padding: 2rem;
   }
   .left-pane {
     min-width: 40vw;
@@ -280,6 +289,12 @@ body {
     padding: 0;
     grid-gap: 0;
   }
+  #notes .noItem {
+    width: auto;
+  }
+  .note-card h4 {
+    max-width: 90%;
+  }
   .note-card {
     border: none;
     border-radius: 0;
@@ -287,6 +302,7 @@ body {
     margin: 0;
   }
   .note-card p {
+    display: inline-block;
     max-width: 90%;
     white-space: nowrap;
     overflow: hidden;
