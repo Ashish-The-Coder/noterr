@@ -296,6 +296,7 @@ body {
     max-width: 90%;
   }
   .note-card {
+    height: auto;
     border: none;
     border-radius: 0;
     padding: 1.75rem 2rem;
